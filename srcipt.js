@@ -24,7 +24,7 @@
         });
     }
 
-    // load all plants (initial 6)
+    // load all plants 
     const loadInitialPlants = () => {
       showSpinner(true);
       fetch("https://openapi.programming-hero.com/api/plants")
