@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Earth</title>
+  <!-- tailwindcss & daisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="navbar bg-[#15803d] shadow-sm px-20">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <div tabindex="0" role="button" class="btn btn-ghost lg:hidden"> <svg xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+            </svg> </div>
+          <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+            <li><a>About</a></li>
+            <li> <a>Gallery</a> </li>
+            <li><a>Plant a Tree</a></li>
+          </ul>
+        </div> <a class="btn btn-ghost text-xl text-[#FFFFFF]">Green Earth</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a class="text-[#FFFFFF]">About</a></li>
+          <li>
+          <li><a class="text-[#FFFFFF]">Gallery</a></li>
+          <li> </li>
+          <li><a class="text-[#FFFFFF]">Plant a Tree</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end"> <button class="btn btn-warning rounded-3xl text-[#15803d]">Plant a Tree</button> </div>
+    </div>
+  </header>
+
+
+  <!-- background section -->
+  <section class="flex items-center bg-[#CFF0DC]">
+    <div> <img src="hero-leaf1.png" alt=""> </div>
+    <div class="text-center">
+      <h1 class="font-semibold text-[48px] text-[#1f2937] ">Plant a Tree, Grow a Future</h1> <br>
+      <p class="opacity-80 text-center">Join our mission to plant 1 million trees and make the Earth greener for future
+        generations.</p> <br> <button class="btn btn-warning rounded-3xl text-[#15803d]">Get Involved</button>
+    </div>
+    <div> <img src="hero-leaf2.png" alt=""> </div>
+  </section>
+
+  <!-- Main -->
+  <article class="bg-[#F0FDF4] py-10">
+    <section class="flex flex-col lg:flex-row w-11/12 mx-auto gap-6">
+      <!-- category -->
+      <div class="lg:w-2/12">
+        <h3 class="font-bold mb-5 text-2xl">Categories</h3>
+        <ul id="catagoryContainer"></ul>
+      </div>
+
+      <!-- cards -->
+      <div class="lg:w-8/12">
+        <h1 class="text-3xl font-bold text-center mb-6">Choose Your Trees</h1>
+
+        <!-- spinner -->
+        <div id="spinner" class="text-center hidden">
+          <span class="loading loading-spinner loading-lg text-green-600"></span>
+        </div>
+
+        <!-- card container -->
+        <div id="cardContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      </div>
+
+      <!-- cart -->
+      <div class="lg:w-2/12 bg-white shadow rounded-xl p-4">
+        <h4 class="text-xl font-bold mb-4">Your Cart</h4>
+        <ul id="cartList" class="space-y-2"></ul>
+        <p class="font-semibold mt-4">Total: <span id="totalPrice">0</span>৳</p>
+      </div>
+    </section>
+  </article>
+
+  <!-- Modal -->
+  <section id="detailsModal" class="modal">
+    <div class="modal-box">
+      <h3 id="modalTitle" class="font-bold text-lg"></h3>
+      <img id="modalImage" class="w-full h-48 object-cover rounded-md my-3" />
+      <p id="modalDesc" class="text-gray-600"></p>
+      <div class="modal-action">
+        <form method="dialog">
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <script src="srcipt.js"></script>
+</body>
+
+</html>
