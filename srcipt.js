@@ -100,7 +100,6 @@
       totalPriceEl.innerText = total;
     }
 
-    // show modal details
 
 
     // spinner toggle
