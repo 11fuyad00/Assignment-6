@@ -16,7 +16,7 @@
             const li = document.createElement("li");
             li.innerHTML = `
               <button onclick="loadCategory('${cata.category_name}', this)"
-              class="block w-full text-left mb-2 px-3 py-2 rounded-md hover:bg-green-600 hover:text-white">
+              class="block w-full text-left mb-2 px-3 py-2 rounded-md hover:bg-green-600 hover:text-white ">
               ${cata.category_name}
               </button>`;
             catagoryContainer.appendChild(li);
@@ -57,7 +57,7 @@
         div.className = "bg-white rounded-lg shadow p-4 flex flex-col";
         div.innerHTML = `
           <div class="h-40 bg-gray-200 flex items-center justify-center rounded-md">
-            <img src="${plant.image}" alt="${plant.name}" class="max-h-36 w-[180px]">
+            <img src="${plant.image}" alt="${plant.name}" class="max-h-37 w-[200px]">
           </div>
           <h3 onclick="showDetails('${plant.plant_id}')" class="font-semibold text-lg mt-2 cursor-pointer text-green-700 hover:underline">${plant.name}</h3>
           <p class="text-gray-600 text-sm mt-1">${plant.description.slice(0, 70)}...</p>
@@ -101,17 +101,7 @@
     }
 
     // show modal details
-    const showDetails = (id) => {
-      fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
-        .then(res => res.json())
-        .then(data => {
-          const plant = data.plant;
-          document.getElementById("modalTitle").innerText = plant.name;
-          document.getElementById("modalImage").src = plant.image;
-          document.getElementById("modalDesc").innerText = plant.description;
-          document.getElementById("detailsModal").showModal();
-        });
-    }
+
 
     // spinner toggle
     const showSpinner = (show) => {
